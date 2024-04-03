@@ -20,18 +20,23 @@ const App = () => {
     if (!isLoggedIn) {
       dispatch(getUser());
     }
-  }, [dispatch]);
+  }, [dispatch, isLoggedIn]);
+
   return (
     <div className="App">
       <ToastContainer position="bottom-right" />
 
       <Switch>
-        <Route exact path={"/"}>
+        <Route exact path="/">
           <NavbarComponent />
           <h1>Welcome to file management system</h1>
         </Route>
-        <Route exact path="/login" component={() => <Login />}></Route>
-        <Route exact path="/signup" component={() => <Register />}></Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/signup">
+          <Register />
+        </Route>
         <Route exact path="/dashboard" component={Dashboard} />
       </Switch>
     </div>
