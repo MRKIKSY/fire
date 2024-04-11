@@ -23,13 +23,15 @@ const App = () => {
   }, [dispatch, isLoggedIn]);
 
   return (
-    <div className="App">
+    <div className="App container">
       <ToastContainer position="bottom-right" />
 
       <Switch>
         <Route exact path="/">
           <NavbarComponent />
-          <h1>Welcome to file management system</h1>
+          <div className="jumbotron">
+            <h1 className="display-4">Welcome to the File Management System</h1>
+          </div>
         </Route>
         <Route exact path="/login">
           <Login />
